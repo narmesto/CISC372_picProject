@@ -68,7 +68,12 @@ void* convolute_thread(void* args) {
     ThreadArgs* thread_args = (ThreadArgs*)args;
     Image* srcImage = thread_args->srcImage;
     Image* destImage = thread_args->destImage;
-    Matrix algorithm = thread_args->algorithm;
+    Matrix algorithm;
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            algorithm[i][j] = thread_args->algorithm[i][j];
+        }
+    }
     int start_row = thread_args->start_row;
     int end_row = thread_args->end_row;
 
