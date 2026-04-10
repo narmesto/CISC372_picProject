@@ -1,0 +1,12 @@
+Script started on Fri 10 Apr 2026 05:29:54 PM EDT
+]0;narmesto@r1n01.darwin:~/CISC372_picProject[?1034h[(ea-cisc372-silber:narmesto)@r1n01 CISC372_picProject]$ exitscript output.txtexit[Kgcc -o image_pthread image.c -lpthread -lm[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kgcc -std=c99 -o image_pthread image.c -lpthread -lm
+]0;narmesto@r1n01.darwin:~/CISC372_picProject[(ea-cisc372-silber:narmesto)@r1n01 CISC372_picProject]$ gcc -std=c99 -o image_omp image_omp.c -fopenmp -lm
+]0;narmesto@r1n01.darwin:~/CISC372_picProject[(ea-cisc372-silber:narmesto)@r1n01 CISC372_picProject]$ ./image_pthread pic1.jpg edge
+Took 7 seconds
+]0;narmesto@r1n01.darwin:~/CISC372_picProject[(ea-cisc372-silber:narmesto)@r1n01 CISC372_picProject]$ export OMP_NUM_THREADS=4
+]0;narmesto@r1n01.darwin:~/CISC372_picProject[(ea-cisc372-silber:narmesto)@r1n01 CISC372_picProject]$ ./image_omp pic1.jpg edge
+Took 7 seconds
+]0;narmesto@r1n01.darwin:~/CISC372_picProject[(ea-cisc372-silber:narmesto)@r1n01 CISC372_picProject]$ exit
+exit
+
+Script done on Fri 10 Apr 2026 05:31:07 PM EDT
