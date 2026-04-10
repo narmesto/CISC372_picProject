@@ -101,7 +101,14 @@ void convolute(Image* srcImage, Image* destImage, Matrix algorithm) {
     for (int i = 0; i < NUM_THREADS; i++) {
         thread_args[i].srcImage = srcImage;
         thread_args[i].destImage = destImage;
-        thread_args[i].algorithm = algorithm;
+        
+        // Copy matrix (can't assign directly)
+        for (int r = 0; r < 3; r++) {
+            for (int c = 0; c < 3; c++) {
+                thread_args[i].algorithm[r][c] = algorithm[r][c];
+            }
+        }
+        
         thread_args[i].start_row = i * rows_per_thread;
         thread_args[i].end_row = (i == NUM_THREADS - 1) ? srcImage->height : (i + 1) * rows_per_thread;
         pthread_create(&threads[i], NULL, convolute_thread, &thread_args[i]);
